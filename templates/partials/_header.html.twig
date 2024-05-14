@@ -1,0 +1,14 @@
+
+
+<body>
+    {% block body %}
+        <div>
+            {% if app.user %}
+                <a href="{{ path('logout') }}">logout</a>
+            {% else %}
+            <a href="{{ path('login') }}">login</a>
+            <a href="{{ path('register') }}">Sign-in</a>
+            {% endif %}
+        </div>
+    {% endblock %}
+</body>

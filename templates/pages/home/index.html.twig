@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+
+    {% if app.user %}
+        <h1>Bienvenue, {{ email }} !</h1>
+    {% else %}
+        <h1>Veuillez vous connecter</h1>
+    {% endif %}
+{% endblock %}
