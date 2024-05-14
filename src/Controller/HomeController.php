@@ -15,7 +15,7 @@ class HomeController extends AbstractController
         $email = 'yoyoyo';
         new User();
         if ($this->getUser() !== null) {
-
+            $email = $this->getUser()->getEmail();
         }
 
         return $this->render('pages/home/index.html.twig', [

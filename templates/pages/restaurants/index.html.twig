@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello RestaurantController!{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1>Restaurant Liste</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Adresse</th>
+                <th>Telephone</th>
+                <th>Cuisine</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for restau in restaux %}
+                <tr>
+                    <td>{{ restau.name }}</td>
+                    <td>{{ restau.adresse }}</td>
+                    <td>{{ restau.phone }}</td>
+                    <td>{{ restau.cuisine }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="navigation">
+        {{ knp_pagination_render(restaux) }}
+    </div>
+</div>
+{% endblock %}
