@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello RestaurantController!{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1>{{ restaurant.name }}</h1>
+    <p>adresse : {{ restaurant.adresse }}</p>
+    <p> Telephone : {{ restaurant.phone }}</p>
+    <p>cusine style : {{ restaurant.cuisine }}</p>
+    
+</div>
+{% endblock %}

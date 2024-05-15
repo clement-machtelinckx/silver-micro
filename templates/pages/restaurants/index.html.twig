@@ -12,6 +12,7 @@
                 <th>Adresse</th>
                 <th>Telephone</th>
                 <th>Cuisine</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -21,6 +22,11 @@
                     <td>{{ restau.adresse }}</td>
                     <td>{{ restau.phone }}</td>
                     <td>{{ restau.cuisine }}</td>
+                    <td>
+                        <a href="{{ path('restaurant.show', {'id': restau.id}) }}" class="btn btn-success">Show</a>
+                        <a href="{{ path('reservation.new', {'id': restau.id}) }}" class="btn btn-warning">add resa btn</a>
+                    </td>
+
                 </tr>
             {% endfor %}
         </tbody>

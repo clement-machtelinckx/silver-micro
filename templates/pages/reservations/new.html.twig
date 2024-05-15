@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ReservationController!{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1>Reservation chez {{ restaurant.name }}<h1>
+
+            {{ form_start (form)}}
+
+            <div class="form-group">
+                {{ form_label(form.nbOfGuests) }}
+                <div class="border border-dark">
+                {{ form_widget(form.nbOfGuests) }}
+                </div>
+                <div class="form-error">
+                {{ form_errors(form.nbOfGuests) }}
+                </div>
+            </div>
+            
+
+            {{ form_end(form) }}
+    </div>
+
+{% endblock %}

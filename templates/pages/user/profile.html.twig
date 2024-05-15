@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello UserController!{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1>Bienvenue sur votre profile</h1>
+    <p>{{ user.email }}</p>
+
+    <h2>Restaurant Liste</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>DATE</th>
+                <th>restaurant</th>
+                <th>nb de Guest</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for reservation in reservations %}
+                <tr>
+                    <td>{{ reservation.dateTime.format('Y-m-d H:i:s') }}</td>
+                    <td>{{ reservation.restaurant.name }}</td>
+                    <td>{{ reservation.nbOfGuests }}</td>
+                    <td>
+
+                    </td>
+
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</div>
+{% endblock %}
