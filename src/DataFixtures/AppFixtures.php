@@ -29,6 +29,7 @@ class AppFixtures extends Fixture
             $restaurant->setAdresse('adresse');
             $restaurant->setPhone('phone');
             $restaurant->setCuisine('cuisine');
+            $restaurant->setDescription('this is a général description of the restaurant and the cuisine it serves.\n It is a very nice place to eat and enjoy a good meal.');
             $manager->persist($restaurant );
         }
         $manager->flush();

@@ -35,8 +35,6 @@ class ReservationController extends AbstractController
             $reservation->setUser($user);
             $reservation->setRestaurant($restaurant);
     
-            // définit la date et l'heure de la réservation
-            $reservation->setDateTime(new DateTimeImmutable('now'));
     
             // persiste et enregistre la réservation dans la base de données
             $manager->persist($reservation);
@@ -52,5 +50,23 @@ class ReservationController extends AbstractController
             'form' => $form->createView(),
         ]);
     }
+
+    #[Route('/reservation/delete/{id}', name: 'reservation.del', methods: ['POST'])]
+    public function delReservation(int $id, EntityManagerInterface $manager): Response
+    {
+        $reservation = $manager->getRepository(Reservation::class)->find($id);
+    
+        if (!$reservation) {
+            throw $this->createNotFoundException('La réservation demandée n\'existe pas.');
+        }
+    
+        $manager->remove($reservation);
+        $manager->flush();
+    
+        $this->addFlash('success', 'La réservation a bien été supprimée.');
+    
+        return $this->redirectToRoute('user');
+    }
+    
     
 }

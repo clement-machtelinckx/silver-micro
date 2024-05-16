@@ -19,7 +19,12 @@ class NewReservationType extends AbstractType
             ->add('dateTime', null, [
                 'widget' => 'single_text',
             ])
-            ->add('nbOfGuests')
+            ->add('nbOfGuests', null, [
+                'attr' => [
+                    'min' => 1,
+                    'max' => 10,
+                ]
+            ])
             ->add('sumbit', SubmitType::class, [
                 'attr' => [
                     'class' => 'btn btn-primary mt-4 mb-4'

@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\ReservationRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: ReservationRepository::class)]
 class Reservation
@@ -14,9 +15,11 @@ class Reservation
     private ?int $id = null;
 
     #[ORM\Column]
+    
     private ?\DateTimeImmutable $dateTime = null;
 
     #[ORM\Column]
+    #[Assert\Range(min: 1, max: 10)]
     private ?int $nbOfGuests = null;
 
     #[ORM\ManyToOne(inversedBy: 'reservations')]

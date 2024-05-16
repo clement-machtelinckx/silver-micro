@@ -7,24 +7,26 @@
     <h1>Bienvenue sur votre profile</h1>
     <p>{{ user.email }}</p>
 
-    <h2>Restaurant Liste</h2>
-    <table>
+    <h2>Vos réservation</h2>
+    <table class="table table-hover mt-4">
         <thead>
-            <tr>
-                <th>DATE</th>
-                <th>restaurant</th>
-                <th>nb de Guest</th>
-                <th></th>
+            <tr class="bg-primary text-white">
+                <th scope="col">DATE</th>
+                <th scope="col">restaurant</th>
+                <th scope="col">nb de Guest</th>
+                <th scope="col"></th>
             </tr>
         </thead>
         <tbody>
             {% for reservation in reservations %}
-                <tr>
+                <tr class="table-active">
                     <td>{{ reservation.dateTime.format('Y-m-d H:i:s') }}</td>
                     <td>{{ reservation.restaurant.name }}</td>
                     <td>{{ reservation.nbOfGuests }}</td>
                     <td>
-
+                        <form action="{{ path('reservation.del', {'id': reservation.id}) }}" method="post">
+                            <button type="submit" class="btn btn-danger">Supprimer</button>
+                        </form>
                     </td>
 
                 </tr>

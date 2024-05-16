@@ -3,11 +3,21 @@
 {% block title %}Hello RestaurantController!{% endblock %}
 
 {% block body %}
-<div class="container">
+<div class="container mt-4">
+
     <h1>{{ restaurant.name }}</h1>
+    <div class="mt-4 resto-profil">
+    <div class="img">
+        <img src="https://picsum.photos/seed/picsum/200/300">
+
+    </div>
+    <div>
     <p>adresse : {{ restaurant.adresse }}</p>
     <p> Telephone : {{ restaurant.phone }}</p>
     <p>cusine style : {{ restaurant.cuisine }}</p>
-    
+    <p>description : {{ restaurant.description }}</p>
+
+    </div>
+    </div>
 </div>
 {% endblock %}
