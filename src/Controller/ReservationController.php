@@ -12,9 +12,12 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Validator\Constraints as Assert;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 
 class ReservationController extends AbstractController
 {
+    
     #[Route('/reservation/{id}', name: 'reservation.new', methods: ['GET', 'POST'])]
     public function newReservation(Restaurant $restaurant, Request $request, EntityManagerInterface $manager): Response
     {

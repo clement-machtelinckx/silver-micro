@@ -1,13 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ReservationController!{% endblock %}
+{% block title %}Ressto-Resa reservation{% endblock %}
 
 {% block body %}
-    <div class="container">
+    <div class="container mt-4">
+        <div>
         <h1>Reservation chez {{ restaurant.name }}<h1>
-
+        <div class='mt-4'>
             {{ form_start (form)}}
-
             <div class="form-group">
                 {{ form_label(form.nbOfGuests) }}
                 <div class="border border-dark">
@@ -17,9 +17,9 @@
                 {{ form_errors(form.nbOfGuests) }}
                 </div>
             </div>
-            
-
             {{ form_end(form) }}
+        </div>
+        </div>
     </div>
 
 {% endblock %}

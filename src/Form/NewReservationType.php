@@ -18,11 +18,15 @@ class NewReservationType extends AbstractType
         $builder
             ->add('dateTime', null, [
                 'widget' => 'single_text',
+                'attr' => [
+                    'class' => 'form-control',
+                ]
             ])
             ->add('nbOfGuests', null, [
                 'attr' => [
                     'min' => 1,
                     'max' => 10,
+                    'class' => 'form-control',
                 ]
             ])
             ->add('sumbit', SubmitType::class, [

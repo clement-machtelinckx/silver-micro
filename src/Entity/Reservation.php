@@ -15,7 +15,6 @@ class Reservation
     private ?int $id = null;
 
     #[ORM\Column]
-    
     private ?\DateTimeImmutable $dateTime = null;
 
     #[ORM\Column]

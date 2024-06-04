@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello RestaurantController!{% endblock %}
+{% block title %}Resto-Resa Infos{% endblock %}
 
 {% block body %}
 <div class="container mt-4">
@@ -11,12 +11,16 @@
         <img src="https://picsum.photos/seed/picsum/200/300">
 
     </div>
-    <div>
-    <p>adresse : {{ restaurant.adresse }}</p>
-    <p> Telephone : {{ restaurant.phone }}</p>
-    <p>cusine style : {{ restaurant.cuisine }}</p>
-    <p>description : {{ restaurant.description }}</p>
+    <div class="resto-infos">
+        <div class="m-4">
+        <p>adresse : {{ restaurant.adresse }}</p>
+        <p> Telephone : {{ restaurant.phone }}</p>
+        <p>cusine style : {{ restaurant.cuisine }}</p>
+        <p>description : {{ restaurant.description }}</p>
 
+        <a href="{{ path('restaurant.show', {'id': restaurant.id}) }}" class="btn btn-success">Infos</a>
+        <a href="{{ path('reservation.new', {'id': restaurant.id}) }}" class="btn btn-warning">Reservation</a>
+        </div>
     </div>
     </div>
 </div>

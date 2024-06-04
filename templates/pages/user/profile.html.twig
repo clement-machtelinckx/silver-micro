@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello UserController!{% endblock %}
+{% block title %}Resto-Resa Profil{% endblock %}
 
 {% block body %}
 <div class="container">
@@ -23,7 +23,9 @@
                     <td>{{ reservation.dateTime.format('Y-m-d H:i:s') }}</td>
                     <td>{{ reservation.restaurant.name }}</td>
                     <td>{{ reservation.nbOfGuests }}</td>
-                    <td>
+                    <td class="d-flex flex-row ">
+                        <a href="{{ path('restaurant.show', {'id': reservation.restaurant.id}) }}" class="btn btn-success">Infos</a>
+
                         <form action="{{ path('reservation.del', {'id': reservation.id}) }}" method="post">
                             <button type="submit" class="btn btn-danger">Supprimer</button>
                         </form>
